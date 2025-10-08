@@ -18,11 +18,11 @@ import { trigger, transition, style, animate } from '@angular/animations';
 export class ExperienceComponent {
   experiences = [
     {
-      company: 'Automonk Solutions Pvt Ltd',
+      company: 'Automonk Technologies Pvt. Ltd.',
       role: 'Software Developer',
       duration: 'April 2025 - Present',
       location: 'Bhumkar Chowk, Pune, Maharashtra, India',
-      description: `As a Software Developer at Automonk Solutions Pvt Ltd, I focus on creating responsive and user-friendly web applications using Angular. 
+      description: `As a Software Developer at Automonk Technologies Pvt. Ltd., I focus on creating responsive and user-friendly web applications using Angular. 
       I collaborate with the development team to design, implement, and maintain front-end architecture for various client projects. 
       My responsibilities include translating UI/UX design wireframes into reusable components, optimizing applications for maximum speed and scalability, 
       and ensuring cross-platform compatibility and browser responsiveness. I apply industry best practices and design patterns to deliver high-quality code 
