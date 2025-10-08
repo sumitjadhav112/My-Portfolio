@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 1680px;
+        }
+
+        .profile-card {
+            background: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .profile-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 40px;
+            margin-top: 70px;
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+
+            color: white;
+            gap: 30px;
+        }
+
+        .avatar-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .avatar-overlay {
+            margin-top: 15px;
+            opacity: 1;
+        }
+
+        .download-btn {
+            background-color: white;
+            color: #3498db;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-info {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .profile-title {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
+        }
+
+        .contact-details {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.2);
+        }
+
+        .profile-skills, .profile-summary {
+            padding: 30px;
+            background: #f9f9f9;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-badge {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .profile-summary h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .profile-summary p {
+            color: #666;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                padding: 30px;
+                margin-top: 67px;
+            }
+
+            .profile-name {
+                font-size: 1.8rem;
+            }
+
+            .profile-title {
+                font-size: 1rem;
+            }
+        }
+
+
+        .social-link.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }

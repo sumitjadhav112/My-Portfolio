@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form nz-form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Full Name</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input 
+              nz-input 
+              formControlName="fullName" 
+              placeholder="Enter your full name"
+            />
+            <nz-form-explain 
+      *ngIf="registrationForm.get('fullName')?.invalid && 
+             registrationForm.get('fullName')?.touched">
+      Full name is required
+    </nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+    
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Email</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input 
+              nz-input 
+              formControlName="email" 
+              placeholder="Enter your email"
+            />
+            <nz-form-explain 
+            *ngIf="registrationForm.get('email')?.invalid && 
+                   registrationForm.get('email')?.touched">
+            Full name is required
+          </nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+    
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Date of Birth</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <nz-date-picker 
+              formControlName="dateOfBirth"
+              nzPlaceHolder="Select your birth date"
+            ></nz-date-picker>
+          </nz-form-control>
+        </nz-form-item>
+    
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Gender</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <nz-radio-group formControlName="gender">
+              <label nz-radio nzValue="male">Male</label>
+              <label nz-radio nzValue="female">Female</label>
+              <label nz-radio nzValue="other">Other</label>
+            </nz-radio-group>
+          </nz-form-control>
+        </nz-form-item>
+    
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Country</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <nz-select 
+              formControlName="country" 
+              nzPlaceHolder="Select your country"
+            >
+              <nz-option 
+                *ngFor="let country of countries" 
+                [nzValue]="country.value" 
+                [nzLabel]="country.label"
+              ></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+    
+        <nz-form-item>
+          <nz-form-control [nzOffset]="6" [nzSpan]="14">
+            <button 
+              nz-button 
+              nzType="primary" 
+              [disabled]="registrationForm.invalid"
+            >
+              Register
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+      <nz-collapse>
+        @for (panel of panels; track panel) {
+          <nz-collapse-panel [nzHeader]="panel.name" [nzActive]="panel.active" [nzDisabled]="panel.disabled">
+            <p style="margin:0;">
+              A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome
+              guest in many households across the world.
+            </p>
+          </nz-collapse-panel>
+        }
+      </nz-collapse>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<button nz-button (click)="createMessage('success')">Success</button>
+
+<button routerLink="/form" nz-button nzType="primary" (click)="showModal()">Show Modal</button>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Modal Title"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  [nzOkLoading]="isOkLoading"
+>
+  <p *nzModalContent>Modal Content</p>
+</nz-modal>
+
+<nz-date-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-date-picker>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li nz-menu-item>1st menu item</li>
+    <li nz-menu-item>2nd menu item</li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item nzDisabled>disabled menu item</li>
+    <li nz-submenu nzTitle="sub menu">
+      <ul>
+        <li nz-menu-item>3rd menu item</li>
+        <li nz-menu-item>4th menu item</li>
+      </ul>
+    </li>
+    <li nz-submenu nzDisabled nzTitle="disabled sub menu">
+      <ul>
+        <li nz-menu-item>3rd menu item</li>
+        <li nz-menu-item>4th menu item</li>
+      </ul>
+    </li>
+  </ul>
+</nz-dropdown-menu>
+
+
+<router-outlet></router-outlet>
+</body>
+</html>

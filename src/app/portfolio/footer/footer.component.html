@@ -1,0 +1,90 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-column brand-column">
+      <div class="footer-logo">
+        <span class="logo-text">P</span>
+        <span class="logo-dot">.</span>
+      </div>
+      <p class="footer-description">
+        Crafting digital experiences with passion and precision. Let's build something amazing together.
+      </p>
+      <div class="contact-info">
+        <div class="info-item" (click)="copyToClipboard(email)">
+          <i class="fas fa-envelope"></i>
+          <span>{{ email }}</span>
+        </div>
+        <div class="info-item" (click)="copyToClipboard(phone)">
+          <i class="fas fa-phone"></i>
+          <span>{{ phone }}</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>{{ location }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li *ngFor="let link of quickLinks">
+          <a (click)="scrollToSection(link.path, link.fragment)">
+            <i class="fas fa-chevron-right"></i>
+            {{ link.label }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Services</h3>
+      <ul class="footer-links">
+        <li>
+          <a href="javascript:void(0)">
+            <i class="fas fa-check"></i>
+            Web Development
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <i class="fas fa-check"></i>
+            UI/UX Design
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <i class="fas fa-check"></i>
+            Mobile Development
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-column newsletter-column">
+      <h3>Newsletter</h3>
+      <p>Subscribe to receive updates and news about my latest projects.</p>
+      <form class="newsletter-form" (ngSubmit)="onSubmitNewsletterForm(emailInput.value)">
+        <div class="form-group">
+          <input type="email" #emailInput placeholder="Enter your email" required>
+          <button type="submit">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+      <div class="social-links">
+        <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank">
+          <i [class]="social.icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p>&copy; {{ currentYear }} Sumit Jadhav. All rights reserved.</p>
+      <button class="scroll-top" (click)="scrollToSection('/', 'home')">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+  </div>
+</footer>

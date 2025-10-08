@@ -1,0 +1,217 @@
+/* .about-container {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .personal-info {
+    flex: 1;
+  }
+
+  .education-timeline {
+    flex: 1;
+  }
+
+  .journey-card {
+    margin-top: 1rem;
+    background-color: rgba(255,255,255,0.7);
+  }
+
+  .professional-highlights {
+    margin-top: 2rem;
+  } */
+
+
+/* about.component.scss */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-dark: #2c3e50;
+  --text-light: #666;
+  --bg-light: #ecf0f1;
+}
+
+.about-container {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  /* padding: 20px; */
+  /* background-color: var(--bg-light); */
+
+  .about-card {
+    width: 100%;
+    max-width: 1660px;
+    padding: 40px;
+    overflow: hidden;
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 30px;
+
+      h1 {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .header-divider {
+        height: 4px;
+        width: 100px;
+        background: var(--secondary-color);
+        margin: 0 auto;
+      }
+    }
+
+    .about-content {
+      display: grid;
+      gap: 30px;
+
+      .personal-summary {
+        text-align: center;
+
+        h2 {
+          color: var(--text-dark);
+          margin-bottom: 15px;
+        }
+
+        p {
+          color: var(--text-light);
+          line-height: 1.6;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+      }
+
+      .professional-highlights {
+        .highlights-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+
+          .highlight-card {
+            background: white;
+            border-top: 5px solid;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: translateY(-10px);
+            }
+
+            .highlight-icon {
+              font-size: 3rem;
+              margin-bottom: 15px;
+              color: var(--primary-color);
+            }
+
+            .highlight-skills {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 5px;
+
+              .skill-badge {
+                background: var(--primary-color);
+                color: white;
+                padding: 3px 8px;
+                border-radius: 15px;
+                font-size: 0.7rem;
+              }
+            }
+          }
+        }
+      }
+
+      .education-section {
+        .education-timeline {
+          position: relative;
+          padding-left: 50px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: #e0e0e0;
+          }
+
+          .education-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 30px;
+
+            .education-marker {
+              position: absolute;
+              left: -44px;
+              top: 0;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+
+              &.blue { background: var(--primary-color); }
+              &.green { background: var(--secondary-color); }
+            }
+
+            .education-content {
+              background: white;
+              border-radius: 10px;
+              padding: 20px;
+              box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    .about-card {
+      padding: 20px;
+
+      .about-header {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .about-content {
+        .professional-highlights {
+          .highlights-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .education-section {
+          .education-timeline {
+            padding-left: 20px;
+
+            &::before {
+              left: 10px;
+            }
+
+            .education-item {
+              .education-marker {
+                left: -34px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

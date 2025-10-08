@@ -1,0 +1,104 @@
+<div class="contact-container">
+  <div class="contact-info-section">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="info-block">
+      <i class="fas fa-map-marker-alt"></i>
+      <div class="info-content">
+        <h3>Address</h3>
+        <p>Karve Nagar Pune</p>
+        <p>Maharashtra 411052</p>
+      </div>
+    </div>
+    
+    <div class="info-block">
+      <i class="fas fa-phone"></i>
+      <div class="info-content">
+        <h3>Phone</h3>
+        <p>+91 738-761-8549</p>
+      </div>
+    </div>
+    
+    <div class="info-block">
+      <i class="fas fa-envelope"></i>
+      <div class="info-content">
+        <h3>Email</h3>
+        <p>sumitjadhav0677&#64;gmail.com</p>
+      </div>
+    </div>
+    
+    <div class="social-links">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/sumitjadhav1/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/sumitjadhav112" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/sumitjadhav.93/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form-section">
+    <h2 class="section-title">Send Message</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form">
+      <input type="hidden" name="access_key" [value]="accessKey">
+      <div class="form-group">
+        <div class="input-container">
+          <input 
+            type="text" 
+            formControlName="name" 
+            placeholder="Your Name"
+            [class.error]="contactForm.get('name')?.dirty && contactForm.get('name')?.invalid"
+          >
+          <div class="error-message" *ngIf="contactForm.get('name')?.dirty && contactForm.get('name')?.errors?.['required']">
+            Name is required
+          </div>
+          <div class="error-message" *ngIf="contactForm.get('name')?.dirty && contactForm.get('name')?.errors?.['minlength']">
+            Name must be at least 2 characters
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-container">
+          <input 
+            type="email" 
+            formControlName="email" 
+            placeholder="Your Email"
+            [class.error]="contactForm.get('email')?.dirty && contactForm.get('email')?.invalid"
+          >
+          <div class="error-message" *ngIf="contactForm.get('email')?.dirty && contactForm.get('email')?.errors?.['required']">
+            Email is required
+          </div>
+          <div class="error-message" *ngIf="contactForm.get('email')?.dirty && contactForm.get('email')?.errors?.['email']">
+            Please enter a valid email
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-container">
+          <textarea 
+            formControlName="message" 
+            placeholder="Your Message"
+            rows="5"
+            [class.error]="contactForm.get('message')?.dirty && contactForm.get('message')?.invalid"
+          ></textarea>
+          <div class="error-message" *ngIf="contactForm.get('message')?.dirty && contactForm.get('message')?.errors?.['required']">
+            Message is required
+          </div>
+          <div class="error-message" *ngIf="contactForm.get('message')?.dirty && contactForm.get('message')?.errors?.['minlength']">
+            Message must be at least 10 characters
+          </div>
+        </div>
+      </div>
+
+      <button 
+        type="submit" 
+        class="submit-button" 
+        [disabled]="isSubmitting || contactForm.invalid"
+      >
+        <span *ngIf="!isSubmitting">Send Message</span>
+        <span *ngIf="isSubmitting">Sending...</span>
+      </button>
+    </form>
+  </div>
+</div>

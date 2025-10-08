@@ -1,0 +1,50 @@
+
+
+
+
+<div class="about-container">
+  <div class="about-card">
+    <div class="about-header">
+      <h1>About Me</h1>
+      <div class="header-divider"></div>
+    </div>
+
+    <div class="about-content">
+      <div class="personal-overview">
+        <div class="personal-summary">
+          <h2>Professional Journey</h2>
+          <p>
+            A passionate Full Stack Developer with a relentless drive for technological 
+            innovation. My journey is defined by creating scalable, efficient, and 
+            user-centric solutions that push the boundaries of web application development.
+          </p>
+        </div>
+      </div>
+
+      <div class="professional-highlights">
+        <h2>Professional Highlights</h2>
+        <div class="highlights-grid">
+          <div 
+            *ngFor="let highlight of highlights" 
+            class="highlight-card" 
+            [style.borderTopColor]="highlight.color"
+          >
+            <div class="highlight-icon">
+              <i class="fas fa-{{ highlight.icon }}"></i>
+            </div>
+            <h3>{{ highlight.title }}</h3>
+            <p>{{ highlight.description }}</p>
+            <div class="highlight-skills">
+              <span 
+                *ngFor="let skill of highlight.skills" 
+                class="skill-badge"
+              >
+                {{ skill }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

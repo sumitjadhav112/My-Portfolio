@@ -1,0 +1,67 @@
+<!-- projects.component.html -->
+<div class="projects-section">
+  <div class="projects-header">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">Explore my recent development work and contributions</p>
+  </div>
+
+  <div class="projects-grid">
+    <div *ngFor="let project of projects; let i = index" class="project-card" [class.loading]="project.loading">
+      <div class="card-content">
+        <div class="project-header">
+          <div class="header-main">
+            <h3 class="project-name">{{project.name}}</h3>
+            <span class="project-type" [style.backgroundColor]="project.tagColor">{{project.type}}</span>
+          </div>
+          <div class="project-duration">
+            <i class="far fa-clock"></i>
+            <span>{{project.duration}}</span>
+          </div>
+        </div>
+
+        <div class="project-role">
+          <i class="fas fa-user-tie"></i>
+          <span>{{project.role}}</span>
+        </div>
+
+        <p class="project-description">{{project.description}}</p>
+
+        <div class="tech-stack">
+          <span *ngFor="let tech of project.technologies" 
+                class="tech-badge"
+                [style.backgroundColor]="tech.color + '15'"
+                [style.color]="tech.color"
+                [style.border]="'1px solid ' + tech.color + '30'">
+            <i class="fas fa-code"></i>
+            {{tech.name}}
+          </span>
+        </div>
+
+        <div class="project-highlights">
+          <div class="highlights-section">
+            <h4><i class="fas fa-tasks"></i> Key Challenges</h4>
+            <ul>
+              <li *ngFor="let challenge of project.challenges">{{challenge}}</li>
+            </ul>
+          </div>
+
+          <div class="highlights-section">
+            <h4><i class="fas fa-trophy"></i> Key Achievements</h4>
+            <ul>
+              <li *ngFor="let achievement of project.achievements">{{achievement}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- <div class="project-links" *ngIf="project.githubLink || project.demoLink">
+          <a *ngIf="project.githubLink" [href]="project.githubLink" target="_blank" class="link github">
+            <i class="fab fa-github"></i> View Source
+          </a>
+          <a *ngIf="project.demoLink" [href]="project.demoLink" target="_blank" class="link demo">
+            <i class="fas fa-external-link-alt"></i> Live Preview
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

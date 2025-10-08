@@ -1,0 +1,147 @@
+/* .skills-container {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .skill-progress-group {
+    margin-top: 1rem;
+  }
+
+  .skill-progress {
+    margin-bottom: 0.5rem;
+  }
+
+  .technology-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    color: #1890ff;
+    border-bottom: 2px solid #1890ff;
+    padding-bottom: 0.5rem;
+  } */
+  .skills-container {
+    font-family: 'Arial', sans-serif;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 30px 15px;
+    background-color: #f4f6f9;
+  }
+
+  /* .skills-wrapper {
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+  } */
+
+  .skills-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .skills-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+
+  .skills-subtitle {
+    color: #7f8c8d;
+    font-size: 1rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .skill-card {
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  }
+
+  .skill-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .skill-icon {
+    margin-right: 15px;
+    color: #3498db;
+    font-size: 1.8rem;
+  }
+
+  .skill-progress-item {
+    margin-bottom: 15px;
+  }
+
+  .skill-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #34495e;
+  }
+
+  .progress-bar {
+    height: 8px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  .technology-tags, .cloud-platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tech-badge, .cloud-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.8rem;
+  }
+
+  .database-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .database-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .database-icon {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }

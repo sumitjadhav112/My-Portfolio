@@ -1,0 +1,92 @@
+<div class="chatbot-wrapper">
+  <!-- Chat Icon Button -->
+  <button
+    class="chat-icon-button"
+    (click)="toggleChat()"
+    *ngIf="!isChatOpen"
+    [@fadeIn]
+  >
+    <i class="fas fa-comments"></i>
+    <span class="unread-indicator" *ngIf="unreadCount > 0">{{unreadCount}}</span>
+  </button>
+  
+  <!-- Chat Window -->
+  <div class="chatbot-container" *ngIf="isChatOpen" [@slideInOut]>
+    <div class="chat-header">
+      <div class="header-content">
+        <div class="header-left">
+          <div class="bot-avatar">
+            <i class="fas fa-robot"></i>
+          </div>
+          <span class="bot-name">Sumit's Assistant</span>
+          <span class="status-indicator online"></span>
+        </div>
+        <div class="header-actions">
+          <button class="close-btn" (click)="toggleChat()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chat-body">
+      <div class="messages-container">
+        <div 
+          *ngFor="let message of messages"
+          class="message"
+          [ngClass]="message.sender"
+        >
+          <div class="message-content" [ngClass]="{'rich-content': message.isRichContent}">
+            <div class="message-text" [innerHTML]="message.text"></div>
+            <div class="message-info">
+              <span class="timestamp">{{ formatTimestamp(message.timestamp) }}</span>
+              <span class="status" *ngIf="message.sender === 'user'">
+                <i class="fas" [ngClass]="{
+                  'fa-check': message.status === 'sent',
+                  'fa-clock': message.status === 'sending',
+                  'fa-exclamation-circle': message.status === 'error'
+                }"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div *ngIf="isLoading" class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+      <!-- Suggested Questions -->
+      <div class="suggested-questions" *ngIf="suggestedQuestions.length > 0">
+        <div class="suggestions-label">Suggested questions:</div>
+        <div class="suggestion-chips">
+          <button
+            *ngFor="let question of suggestedQuestions"
+            class="suggestion-chip"
+            (click)="useSuggestedQuestion(question)"
+          >
+            {{ question }}
+          </button>
+        </div>
+      </div>
+      
+      <div class="input-container">
+        <input
+          [(ngModel)]="userInput"
+          (keyup.enter)="sendMessage()"
+          placeholder="Ask me about Sumit's skills and experience..."
+          [disabled]="isLoading"
+        />
+        <button
+          (click)="sendMessage()"
+          [disabled]="!userInput.trim() || isLoading"
+          class="send-button"
+        >
+          <i class="fas" [ngClass]="isLoading ? 'fa-spinner fa-spin' : 'fa-paper-plane'"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

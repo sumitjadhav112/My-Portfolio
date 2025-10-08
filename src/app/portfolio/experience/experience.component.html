@@ -1,0 +1,86 @@
+<!-- experience.component.html -->
+<section class="experience-section">
+  <div class="container" [@fadeIn]>
+    <div class="section-header">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="experience-timeline">
+      <!-- Loop through experiences array -->
+      <div *ngFor="let experience of experiences; let i = index" class="timeline-entry">
+        <div class="timeline-dot" [ngClass]="{'current': i === 0}"></div>
+        <div class="experience-card" [ngClass]="{'current': i === 0}">
+          <div class="card-header">
+            <div class="logo-container">
+              <div class="company-logo">{{experience.company.substring(0, 2)}}</div>
+            </div>
+            
+            <div class="header-content">
+              <div class="title-section">
+                <h3 class="company-name">{{experience.company}}</h3>
+                <span class="badge" *ngIf="i === 0">Current</span>
+                <span class="badge" *ngIf="i !== 0">Full-time</span>
+              </div>
+              <p class="role">{{experience.role}}</p>
+              <div class="duration-location">
+                <span class="duration">
+                  <i class="fas fa-calendar-alt"></i>
+                  {{experience.duration}}
+                </span>
+                <span class="location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  {{experience.location}}
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <div class="summary">
+              <h4 class="section-subtitle">Overview</h4>
+              <p class="description">{{experience.description}}</p>
+            </div>
+            
+            <div class="responsibilities">
+              <h4 class="section-subtitle">Key Responsibilities</h4>
+              <div class="responsibility-grid">
+                <div class="responsibility-item" *ngFor="let responsibility of experience.responsibilities">
+                  <div class="responsibility-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>{{responsibility}}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="projects-section">
+              <h4 class="section-subtitle">Notable Projects</h4>
+              <div class="projects-grid">
+                <div class="project-card" *ngFor="let project of experience.projects">
+                  <div class="project-icon">
+                    <i class="fas fa-project-diagram"></i>
+                  </div>
+                  <div class="project-content">
+                    <h5 class="project-title">{{project.name}}</h5>
+                    <p class="project-description">{{project.description}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="skills-section">
+              <h4 class="section-subtitle">Technologies & Tools</h4>
+              <div class="skills-container">
+                <div class="skill-tag" *ngFor="let tech of experience.technologies">
+                  <i class="fas fa-code"></i>
+                  <span>{{tech}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+  <div class="education-container">
+    <div 
+      class="education-card"
+    >
+      <div class="education-header">
+        <h1>Academic Journey</h1>
+        <p>Exploring Knowledge, Embracing Innovation</p>
+      </div>
+  
+      <div class="education-timeline-section">
+        <h2>Educational Milestones</h2>
+        <div class="education-timeline">
+          <ng-container *ngFor="let education of educationDetails; let i = index">
+            <div 
+              class="timeline-item"
+              [ngClass]="education.color + '-timeline'"
+            >
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>{{ education.degree }}</h3>
+                  <span class="timeline-badge" [ngClass]="education.color">
+                    {{ education.year }}
+                  </span>
+                </div>
+                
+                <div class="timeline-details">
+                  <p class="institution">{{ education.institution }}</p>
+                  <p *ngIf="education.university" class="university">
+                    {{ education.university }}
+                  </p>
+                  <div class="performance-info">
+                    <div class="performance-item">
+                      <strong>Performance:</strong> {{ education.performance }}
+                    </div>
+                    <div *ngIf="education.stream" class="performance-item">
+                      <strong>Stream:</strong> {{ education.stream }}
+                    </div>
+                  </div>
+                  
+                  <div class="education-highlights">
+                    <h4>Key Highlights</h4>
+                    <ul>
+                      <li *ngFor="let highlight of education.highlights">
+                        {{ highlight }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+  
+      <div class="academic-achievements-section">
+        <h2>Academic Achievements</h2>
+        <div class="achievements-grid">
+          <ng-container *ngFor="let achievement of achievements">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-{{ achievement.icon }}"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>{{ achievement.title }}</h3>
+                <p>{{ achievement.description }}</p>
+                <div class="achievement-category">
+                  {{ achievement.category }}
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+

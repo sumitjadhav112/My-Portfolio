@@ -1,0 +1,87 @@
+<div class="skills-container">
+  <div class="skills-wrapper">
+    <div class="skills-header">
+      <h2 class="skills-title">Professional Skills Ecosystem</h2>
+      <div class="skills-subtitle">
+        Comprehensive Technology Proficiency Landscape
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <i class="skill-icon fas fa-code"></i>
+          <h3>Programming Mastery</h3>
+        </div>
+        <div class="skill-progress-container">
+          <div
+            *ngFor="let skill of programmingSkills; let i = index"
+            class="skill-progress-item"
+          >
+            <div class="skill-label">
+              {{ skill.name }}
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+            <div class="progress-bar">
+              <div
+                class="progress-bar-fill"
+                [style.width.%]="skill.level"
+                [style.background-color]="skill.color"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <i class="skill-icon fas fa-tools"></i>
+          <h3>Technology Stack</h3>
+        </div>
+        <div class="technology-tags">
+          <span
+            *ngFor="let tech of technologies"
+            class="tech-badge"
+            [style.background-color]="tech.color"
+          >
+            {{ tech.name }}
+          </span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <i class="skill-icon fas fa-database"></i>
+          <h3>Database Expertise</h3>
+        </div>
+        <div class="database-list">
+          <div *ngFor="let db of databases" class="database-item">
+            <div class="database-icon">
+              <i [class]="'fas fa-' + db.icon"></i>
+            </div>
+            <div class="database-details">
+              <h4>{{ db.name }}</h4>
+              <p>{{ db.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <i class="skill-icon fas fa-cloud"></i>
+          <h3>Cloud Infrastructure</h3>
+        </div>
+        <div class="cloud-platforms">
+          <span
+            *ngFor="let platform of cloudPlatforms"
+            class="cloud-badge"
+            [style.background-color]="platform.color"
+          >
+            {{ platform.name }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
