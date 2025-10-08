@@ -232,7 +232,7 @@ export class ChatbotComponent implements OnInit {
 experience: [
   {
     title: "Web Developer",
-    company: "Automonk Solutions Pvt Ltd",
+    company: "Automonk Technologies Pvt. Ltd.",
     duration: "April 2025 - Present",
     location: "Pune, Bhumkar Chowk, Maharashtra, India",
     description: "Working as an Angular developer, focusing on building responsive and dynamic web applications. Responsible for implementing component-based architecture, state management solutions, and creating user-friendly interfaces using Angular Material. Collaborating with cross-functional teams to deliver high-quality web solutions while following best practices for performance optimization and code maintainability.",
