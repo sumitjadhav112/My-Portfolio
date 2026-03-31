@@ -245,21 +245,6 @@ experience: [
       "Contributing to code reviews and technical documentation"
     ]
   },
-  {
-    title: "Full Stack Developer",
-    company: "Genius Infotech",
-    duration: "January 2024 - March 2025",
-    location: "BBC Complex, Bhugaon, Pune, Maharashtra, India",
-    description: "As a Full Stack Developer at Genius Infotech, I specialize in building scalable and efficient web and mobile applications. With expertise in Angular for frontend development and Java for backend solutions, I actively contribute to designing, developing, and maintaining high-performance applications. My role involves collaborating with cross-functional teams, ensuring smooth integration of front-end and back-end functionalities, optimizing user experience, and implementing cloud-based deployment strategies. I have a strong focus on best practices, code reusability, and maintainability to deliver robust and efficient solutions for various projects.",
-    technologies: ["Angular", "Java", "Ionic", "TypeScript", "HTML5", "CSS3", "AWS", "Azure", "Hostinger", "Git", "RESTful APIs"],
-    achievements: [
-      "Developed and maintained service booking mobile application using Ionic and Angular",
-      "Created Abacus learning platform with comprehensive admin panel for data management",
-      "Implemented cloud deployment solutions using AWS, Hostinger, and Azure",
-      "Collaborated with cross-functional teams to deliver scalable solutions",
-      "Managed end-to-end development lifecycle from requirement gathering to deployment"
-    ]
-  }
 ],
     skills: [
       {

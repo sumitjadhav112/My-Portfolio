@@ -28,8 +28,8 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 export class FooterComponent {
 
   currentYear: number = new Date().getFullYear();
-  email: string = 'sumitjadhav0677@gmail.com';
-  phone: string = '7387618549';
+  email: string = 'sumitjadhav7387@gmail.com';
+  phone: string = '9673999289';
   location: string = 'Pune, Maharashtra';
 
   socialLinks = [

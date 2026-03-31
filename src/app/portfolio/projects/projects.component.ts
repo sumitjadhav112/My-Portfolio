@@ -25,93 +25,67 @@ interface Project {
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent implements OnInit {
-  projects: Project[] = [
-    {
-      name: 'E-Learning Platform',
-      type: 'Full Stack',
-      description:
-        'Comprehensive e-learning management system with student, instructor, and admin dashboards. Implemented role-based access control and real-time features.',
-      technologies: [
-        { name: 'Java', color: '' },
-        { name: 'Angular', color: '' },
-        { name: 'Spring Boot', color: '' },
-        { name: 'MySQL', color: '' },
-      ],
-      githubLink: 'https://github.com/sumitjadhav/e-learning-platform',
-      demoLink: '',
-      tagColor: 'blue',
-      duration: '6 months',
-      role: 'Full Stack Developer',
-      challenges: ['Real-time data sync', 'Role-based access control'],
-      achievements: ['Completed ahead of schedule', '100% client satisfaction'],
-      loading: false
-
-    },
-    {
-      name: 'Complaint Management System',
-      type: 'Web Application',
-      description:
-        'Real-time complaint tracking system allowing users to submit and track complaints with admin action tracking and resolution workflow.',
-      technologies: [
-        { name: 'Java', color: '' },
-        { name: 'Angular', color: '' },
-        { name: 'Spring Boot', color: '' },
-        { name: 'PostgreSQL', color: '' },
-      ],
-      githubLink: 'https://github.com/sumitjadhav/complaint-management',
-      demoLink: '',
-      tagColor: 'green',
-      duration: '4 months',
-      role: 'Backend Developer',
-      challenges: ['Efficient database design', 'Real-time notifications'],
-      achievements: ['Improved complaint resolution efficiency by 30%'],
-      loading: false
-
-    },
-    {
-      name: 'Service Booking Mobile App',
-      type: 'Mobile Application',
-      description:
-        'Service booking platform developed at Genius Infotech with comprehensive user and service provider interfaces.',
-      technologies: [
-        { name: 'Java', color: '' },
-        { name: 'Angular Ionics', color: '' },
-        { name: 'MySQL', color: '' },
-        { name: 'RESTful API', color: '' },
-      ],
-      githubLink: '',
-      demoLink: '',
-      tagColor: 'purple',
-      duration: '3 months',
-      role: 'Android Developer',
-      challenges: ['User-friendly interface', 'Secure API integration'],
-      achievements: ['Achieved 10,000+ downloads in 3 months'],
-      loading: false
-
-    },
-    {
-      name: 'Employee Management System',
-      type: 'Enterprise Solution',
-      description:
-        'Comprehensive HR management system with employee tracking, payroll, and performance management modules.',
-      technologies: [
-        { name: 'Spring Boot', color: '' },
-        { name: 'Angular', color: '' },
-        { name: 'MySQL', color: '' },
-        { name: 'JWT Authentication', color: '' },
-      ],
-      githubLink: '',
-      demoLink: '',
-      tagColor: 'orange',
-      duration: '5 months',
-      role: 'Full Stack Developer',
-      challenges: ['Authentication and authorization', 'Scalability'],
-      achievements: ['Enhanced employee efficiency by 25%'],
-      loading: false
-
-    },
-  ];
-
+projects: Project[] = [
+  {
+    name: 'Skills Assessment & Interview Preparation Platform',
+    type: 'Full Stack Web Application',
+    description:
+      'A full-stack platform to evaluate technical skills with dynamic exam creation, role-based authentication, and performance analytics dashboard.',
+    technologies: [
+      { name: 'Java', color: '' },
+      { name: 'Spring Boot', color: '' },
+      { name: 'Angular', color: '' },
+      { name: 'MySQL', color: '' },
+      { name: 'JWT', color: '' },
+      { name: 'AWS', color: '' },
+    ],
+    githubLink: '',
+    demoLink: '',
+    tagColor: 'blue',
+    duration: 'Aug 2025 - Present',
+    role: 'Full Stack Developer',
+    challenges: [
+      'Implementing secure exam features like tab-switch detection',
+      'Designing dynamic question selection and exam flow',
+      'Handling role-based authentication using JWT'
+    ],
+    achievements: [
+      'Built complete exam lifecycle from creation to submission',
+      'Improved system security and user experience',
+      'Developed analytics dashboard for performance tracking'
+    ],
+    loading: false
+  },
+  {
+    name: 'Wealth Vision Pro',
+    type: 'Full Stack Web Application',
+    description:
+      'Financial dashboard providing real-time insights into user portfolios by integrating data from multiple sources with interactive visualizations.',
+    technologies: [
+      { name: 'Java', color: '' },
+      { name: 'Spring Boot', color: '' },
+      { name: 'Angular', color: '' },
+      { name: 'MySQL', color: '' },
+      { name: 'AWS', color: '' },
+    ],
+    githubLink: '',
+    demoLink: '',
+    tagColor: 'green',
+    duration: 'Mar 2023 - Feb 2024',
+    role: 'Full Stack Developer',
+    challenges: [
+      'Integrating data from multiple financial sources',
+      'Handling real-time data updates efficiently',
+      'Designing interactive charts and dashboards'
+    ],
+    achievements: [
+      'Delivered real-time financial insights to users',
+      'Improved data visualization using Angular charts',
+      'Built scalable backend using Spring Boot'
+    ],
+    loading: false
+  }
+];
   constructor(private profileService: ProfileService) {}
 
   ngOnInit() {
